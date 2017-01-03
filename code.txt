@@ -1,0 +1,52 @@
+int def soma(int a, int b) {
+	if (a >= b) {
+		a = 2;
+		b = 2;
+	} else {
+		b = 3;
+		int c;
+		c = b;
+		print(c);
+		print("Teste");
+	}	
+	boolean t;
+	t = FALSE;
+	return 1;
+}
+
+boolean def isTrue(boolean variable, int a) {
+	if (variable == TRUE) {
+		variable = FALSE;
+	}
+	return variable;
+}
+
+int def sub(int a, int b) {
+	int x;
+	x = a - b;
+	return x;
+}
+
+void def prod() { 
+	print("a");
+}
+
+main() { 
+	int x;
+	x = 0;
+	boolean a;
+	a = FALSE;
+	while(a == FALSE) {
+		if (a == TRUE) {  
+			print("b");
+			print(x);
+			continue;
+		}
+		break;
+	}
+	x = x + 1;
+	prod();
+	x = soma(2,3);
+	x = sub(5,2);
+	a = isTrue(a, 0);
+}

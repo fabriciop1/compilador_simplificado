@@ -1,0 +1,33 @@
+;if;else;while;print;int;main;boolean;return;break;continue;def;void;TRUE;FALSE;IDENTIFIER;INTEGER;END;OPEN_BR;CLOSE_BR;OPEN_PAR;CLOSE_PAR;ARITHMETIC;RELATIONAL;ATT;MARKS;COMMA;$
+<Start>;;;;;<func> <Start>;main OPEN_PAR CLOSE_PAR OPEN_BR <program> CLOSE_BR;<func> <Start>;;;;;<func> <Start>;;;;INTEGER;;;;;;;;;;;
+<program>;<statement> <program>;;<statement> <program>;<print> <program>;<declarations> <program>;;<declarations> <program>;$;$;$;;;<statement> <program>;<statement> <program>;<statement> <program>;<statement> <program>;;;$;;;;;;;;$
+<boolean_value>;;;;;;;;;;;;;TRUE;FALSE;;;;;;;;;;;;;
+<branch>;$;;$;$;$;;$;;break END;continue END;;;$;$;$;$;;;$;;;;;;;;$
+<arithmetic_operator>;;;;;;;;;;;;;;;;;;;;;;ARITHMETIC;;;;;
+<relational_operator>;;;;;;;;;;;;;;;;;;;;;;;RELATIONAL;;;;
+<type>;;;;;int;;boolean;;;;;;;;;;;;;;;;;;;;
+<identifier>;;;;;;;;;;;;;;;IDENTIFIER;;;;;;;;;;;;
+<identifier_c>;;;;;;;;;;;;;;;IDENTIFIER;INTEGER;;;;;;;;;;;$
+<integer_value>;;;;;;;;;;;;;;;;INTEGER;;;;;;;;;;;$
+<declarations>;;;;;<type> <identifier> END;;<type> <identifier> END;;;;;;;;;;;;;;;;;;;;
+<values>;;;;;;;;;;;;;<boolean_value>;<boolean_value>;;<integer_value>;;;;;;;;;;;
+<expression>;;;;;;;;;;;;;<values> <all_exp>;<values> <all_exp>;<identifier> <all_exp_2>;<values> <all_exp>;;;;;;;;;;;
+<all_exp>;;;;;;;;;;;;;;;;;$;;;;$;<arithmetic_operator> <expression>;<relational_operator> <expression>;ATT <expression>;;;$
+<all_exp_2>;;;;;;;;;;;;;;;;;$;;;OPEN_PAR <arguments> CLOSE_PAR;$;<all_exp>;<all_exp>;<all_exp>;;;$
+<exp>;;;;;;;;;;;;;<values> <exp_analysis>;<values> <exp_analysis>;<identifier> <exp_analysis>;<values> <exp_analysis>;;;;;;;;;;;
+<exp_analysis>;;;;;;;;;;;;;;;;;$;;;;$;;<relational_operator> <exp>;;;;$
+<statement>;<if_statement>;;<while_statement>;<print>;;;;$;$;$;;;<expression> END;<expression> END;<expression> END;<expression> END;;;$;;;;;;;;
+<statement_2>;<while_if>;;<while_statement>;<print>;;;;;$;$;;;<expression> END;<expression> END;<expression> END;<expression> END;;;$;;;;;;;;
+<while_if>;if OPEN_PAR <exp> CLOSE_PAR OPEN_BR <program> <branch> CLOSE_BR <while_else>;;;;;;;;;;;;;;;;;;;;;;;;;;
+<while_else>;$;else OPEN_BR <program> <branch> CLOSE_BR;$;$;$;;$;;$;$;;;;;$;;;;$;;;;;;;;$
+<while_statement>;;;while OPEN_PAR <exp> CLOSE_PAR OPEN_BR <statement_2> <program> <branch> CLOSE_BR;;;;;;;;;;;;;;;;;;;;;;;;
+<if_statement>;if OPEN_PAR <exp> CLOSE_PAR OPEN_BR <program> CLOSE_BR <else_statement>;;;;;;;;;;;;;;;;;;;;;;;;;;
+<else_statement>;$;else OPEN_BR <program> CLOSE_BR;$;$;$;;$;$;$;$;;;;;$;;;;$;;;;;;;;$
+<func>;;;;;<type> def <identifier> OPEN_PAR <parameters> CLOSE_PAR OPEN_BR <program> <return> CLOSE_BR;;<type> def <identifier> OPEN_PAR <parameters> CLOSE_PAR OPEN_BR <program> <return> CLOSE_BR;;;;;void def <identifier> OPEN_PAR <parameters> CLOSE_PAR OPEN_BR <program> CLOSE_BR;;;;;;;;;;;;;;;
+<parameters>;;;;;<type> <identifier> <parameters>;;<type> <identifier> <parameters>;;;;;;;;;;;;;;$;;;;;COMMA <type> <identifier> <parameters>;$
+<return>;;;;;;;;return <return_types> END;;;;;;;;;;;;;;;;;;;
+<return_types>;;;;;;;;;;;;;<boolean_value>;<boolean_value>;IDENTIFIER;INTEGER;;;;;;;;;;;
+<arguments>;;;;;;;;;;;;;<values> <arg_comma>;<values> <arg_comma>;<identifier> <arg_comma>;<values> <arg_comma>;;;;;$;;;;;;
+<arg_comma>;;;;;;;;;;;;;;;;;;;;;$;;;;;COMMA <arguments>;$
+<print>;;;;print OPEN_PAR <out> CLOSE_PAR END;;;;;;;;;;;;;;;;;;;;;;;
+<out>;;;;;;;;;;;;;<values>;<values>;<identifier>;<values>;;;;;;;;;MARKS <identifier_c> MARKS;;$
